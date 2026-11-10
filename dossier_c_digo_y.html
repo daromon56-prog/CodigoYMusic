@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yago Robles & Código Y - Press Kit</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Configuration and Styling -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cy-green': '#00ff41',
+                        'cy-dark': '#0a0a0a',
+                        'cy-gray': '#1a1a1a',
+                        'cy-gold': '#FFD700',
+                        'cy-silver': '#C0C0C0',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gold-gradient': 'linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+                        'silver-gradient': 'linear-gradient(to right, #757F9A, #D7DDE8)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom non-rectangular image shapes (Blobs) */
+        .blob-1 { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        .blob-2 { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        .blob-3 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        .blob-4 { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Watermark Backgrounds */
+        .watermark-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.05;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(26, 26, 26, 0.75);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* Gradient Text */
+        .text-gradient-gold {
+            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-silver {
+            background: linear-gradient(to right, #757F9A, #D7DDE8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #00ff41; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+    </style>
+</head>
+<body class="bg-cy-dark text-gray-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass-card" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <span class="font-heading font-bold text-xl text-cy-green tracking-widest">CÓDIGO <span class="text-gradient-gold">Y</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-cy-green transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide">Inicio</a>
+                        <a href="#quienes-somos" class="hover:text-cy-green transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide">Nosotros</a>
+                        <a href="#figura-artistica" class="hover:text-cy-green transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide">Yago Robles</a>
+                        <a href="#propuesta" class="hover:text-cy-green transition-colors px-3 py-2 text-sm font-medium uppercase tracking-wide">Propuesta</a>
+                        <a href="#contacto" class="bg-gold-gradient text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Watermark Background using logo-codigo.jpg -->
+        <img src="logo-codigo.jpg" alt="Fondo" class="watermark-bg scale-125 mix-blend-screen opacity-10" onerror="this.style.display='none'">
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto fade-in-up">
+            <div class="mb-6 flex justify-center">
+                <img src="logo-yago.jpeg" alt="Yago Robles Logo" class="max-h-28 rounded-xl shadow-[0_0_20px_rgba(255,215,0,0.3)] border-2 border-cy-gold" onerror="this.src='https://placehold.co/300x100/111111/FFD700?text=Yago+Robles'">
+            </div>
+            <h1 class="font-heading font-extrabold text-5xl md:text-7xl lg:text-8xl tracking-tighter mb-4 text-white">
+                YAGO ROBLES <br> 
+                <span class="text-gradient-gold">& CÓDIGO Y</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-cy-green font-light tracking-[0.2em] uppercase mb-10">
+                Descifrando sonidos, Creando emociones
+            </p>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 border-l-4 border-cy-silver pl-4 text-left italic">
+                Música, tradición, juventud y espectáculo
+            </p>
+            <div class="flex justify-center gap-6">
+                <a href="#quienes-somos" class="bg-transparent border-2 border-cy-green text-cy-green hover:bg-cy-green hover:text-black px-8 py-3 rounded-full font-bold transition-all duration-300">Conócenos</a>
+                <a href="#contacto" class="bg-silver-gradient text-black px-8 py-3 rounded-full font-bold shadow-[0_0_15px_rgba(192,192,192,0.5)] hover:scale-105 transition-all duration-300">Contrataciones</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quiénes Somos Section -->
+    <section id="quienes-somos" class="py-24 relative overflow-hidden bg-cy-gray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 fade-in-up">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-cy-green blur-3xl opacity-20 blob-1"></div>
+                        <img src="grupo-concierto.jpg" alt="Código Y Agrupación" class="relative w-full h-[500px] object-cover blob-1 shadow-[0_0_30px_rgba(0,255,65,0.3)] border-4 border-cy-dark" onerror="this.src='https://placehold.co/600x500/1a1a1a/00ff41?text=Codigo+Y'">
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 fade-in-up delay-100">
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6"><span class="text-gradient-gold">1.</span> Quiénes Somos</h2>
+                    <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+                        <p>
+                            <strong class="text-white">Yago Robles & Código Y</strong> es una agrupación musical ecuatoriana conformada por jóvenes músicos y artistas apasionados por la música, el espectáculo y sobre todo las tradiciones ecuatorianas y latinoamericanas.
+                        </p>
+                        <p>
+                            Nuestra propuesta artística se caracteriza por ofrecer un <span class="text-cy-green font-semibold">repertorio musical totalmente en vivo, variado y versátil</span>, que recorre diferentes géneros musicales, desde cumbias, merengues, sanjuanitos, pasacalles y más ritmos para bailar, hasta boleros, baladas, valses, pasillos y más canciones para escuchar, disfrutar y recordar.
+                        </p>
+                        <p>
+                            Nos distinguimos por combinar calidad interpretativa, talento instrumental, armonía vocal y animación, ofreciendo un espectáculo dinámico que conecta con públicos de diferentes edades y gustos musicales.
+                        </p>
+                        <p class="border-l-4 border-cy-gold pl-4 italic">
+                            "Nuestro compromiso es brindar experiencias musicales memorables, adaptándonos a la naturaleza y características de cada evento y cada escenario."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Figura Artística Section -->
+    <section id="figura-artistica" class="py-24 relative overflow-hidden bg-black">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-cy-gold opacity-10 blur-[100px] rounded-full"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
+                <div class="w-full lg:w-1/2 fade-in-up">
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6"><span class="text-gradient-silver">2.</span> Nuestra Figura Artística</h2>
+                    <h3 class="text-2xl font-semibold text-cy-gold mb-6 uppercase tracking-wider">Yago Robles – Requintista</h3>
+                    <div class="space-y-6 text-gray-300 leading-relaxed">
+                        <p>
+                            Yago Robles es el principal referente artístico de nuestra agrupación y un destacado intérprete del requinto, instrumento que constituye una parte esencial de nuestra identidad musical en cada género que interpretamos.
+                        </p>
+                        <p>
+                            Su trayectoria artística, y su destacada presencia en redes sociales, le ha permitido conectar con el público en diferentes ciudades, pero también a nivel <span class="text-cy-silver font-semibold">internacional</span>, lo cual le ha llevado a representar al Ecuador en escenarios de Estados Unidos, Colombia y México.
+                        </p>
+                        <div class="glass-card p-6 rounded-2xl relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-gold-gradient opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                            <p class="relative z-10">
+                                Entre sus participaciones destaca su representación del Ecuador en el <strong>Festival Mundial del Bolero, realizado en Ciudad de México en 2025</strong>, una experiencia que fortalece su proyección artística y su compromiso con la difusión de la música latinoamericana.
+                            </p>
+                        </div>
+                        <p>
+                            Su talento, identidad musical y presencia escénica aportan un sello distintivo al espectáculo de Yago Robles & Código Y.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 fade-in-up delay-100 flex justify-center relative">
+                     <div class="relative w-full max-w-md">
+                        <img src="requinto-1.jpg" alt="Yago Robles Requinto" class="relative z-20 w-full h-[600px] object-cover blob-2 shadow-[0_15px_50px_rgba(255,215,0,0.2)] border-2 border-cy-gold" onerror="this.src='https://placehold.co/400x600/111111/FFD700?text=Yago+Robles'">
+                        <img src="requinto-2.jpg" alt="Yago Robles en vivo" class="absolute -bottom-10 -left-20 z-10 w-64 h-64 object-cover blob-3 shadow-lg opacity-90 border-2 border-cy-silver hidden md:block" onerror="this.src='https://placehold.co/300x300/111111/C0C0C0?text=En+Vivo'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Propuesta Musical y Formato -->
+    <section id="propuesta" class="py-24 bg-cy-gray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+                <!-- Propuesta -->
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-cy-green fade-in-up hover:-translate-y-2 transition-transform duration-300">
+                    <h2 class="font-heading text-3xl font-bold mb-6"><span class="text-cy-green">3.</span> Nuestra Propuesta Musical</h2>
+                    <p class="text-gray-300 mb-4">
+                        Ofrecemos un espectáculo musical de aproximadamente <span class="text-white font-bold">90 minutos</span>, diseñado para que el público disfrute de una experiencia completa de música, interpretación y entretenimiento, animación, recuerdos y todo tipo de emociones que solo la música las puede lograr.
+                    </p>
+                    <p class="text-gray-300">
+                        Nuestro repertorio incluye todo tipo de género musical como: <span class="text-cy-gold">cumbias, merengues, sanjuanitos, pasacalles</span>, hasta <span class="text-cy-silver">boleros, baladas, valses, pasillos, música instrumental</span>, y otros géneros musicales de acuerdo con las características del evento.
+                    </p>
+                </div>
+
+                <!-- Formato Artístico -->
+                <div class="glass-card p-8 rounded-3xl border-t-4 border-cy-gold fade-in-up delay-100 hover:-translate-y-2 transition-transform duration-300">
+                    <h2 class="font-heading text-3xl font-bold mb-6"><span class="text-gradient-gold">4.</span> Formato Artístico</h2>
+                    <p class="text-gray-300 mb-6">
+                        Nuestra agrupación Código Y, presenta un espectáculo en vivo con interpretación vocal e instrumental integrado por un total de <span class="text-cy-green font-bold text-xl">seis artistas en escena</span>:
+                    </p>
+                    <ul class="grid grid-cols-2 gap-4 text-gray-200">
+                        <li class="flex items-center gap-2"><i class="fas fa-microphone text-cy-gold"></i> Un trío de voces</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-guitar text-cy-gold"></i> Yago Robles (Requinto)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-guitar text-cy-silver"></i> Un guitarrista</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-bolt text-cy-silver"></i> Un bajista</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-music text-cy-green"></i> Un pianista</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-drum text-cy-green"></i> Un percusionista</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Image Gallery Banner -->
+            <div class="flex flex-wrap md:flex-nowrap gap-4 justify-center fade-in-up">
+                <img src="grupo-concierto.jpg" alt="Concierto Código Y" class="w-full md:w-1/3 h-64 object-cover rounded-2xl hover:scale-105 transition-all duration-500 border-2 border-cy-green/40" onerror="this.src='https://placehold.co/400x300/1a1a1a/00ff41?text=Foto+1'">
+                <img src="grupo-parque.jpg" alt="Agrupación en el parque" class="w-full md:w-1/3 h-64 object-cover rounded-2xl hover:scale-105 transition-all duration-500 border-2 border-cy-gold/40" onerror="this.src='https://placehold.co/400x300/1a1a1a/FFD700?text=Foto+2'">
+                <img src="grupo-vivo.jpg" alt="Yago Robles en vivo" class="w-full md:w-1/3 h-64 object-cover rounded-2xl hover:scale-105 transition-all duration-500 border-2 border-cy-silver/40" onerror="this.src='https://placehold.co/400x300/1a1a1a/C0C0C0?text=Foto+3'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiencia y Servicios -->
+    <section class="py-24 bg-black relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Trayectoria -->
+                <div class="fade-in-up">
+                    <h2 class="font-heading text-4xl font-bold mb-8"><span class="text-cy-silver">5.</span> Experiencia y Trayectoria</h2>
+                    <p class="text-gray-300 mb-6">Contamos con más de tres años de experiencia en el mercado del espectáculo, participando en eventos de carácter público y privado, nacionales e internacionales.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-cy-gray flex items-center justify-center shrink-0 border border-cy-green shadow-[0_0_10px_rgba(0,255,65,0.2)]">
+                                <i class="fas fa-users text-cy-green"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Eventos Masivos</h4>
+                                <p class="text-gray-400 text-sm">Eventos nacionales de gran afluencia organizados por GADs y empresarios particulares a nivel nacional.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-cy-gray flex items-center justify-center shrink-0 border border-cy-gold shadow-[0_0_10px_rgba(255,215,0,0.2)]">
+                                <i class="fas fa-award text-cy-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Festivales Destacados</h4>
+                                <ul class="text-gray-400 text-sm list-disc pl-4 space-y-1">
+                                    <li>Festival Internacional del Requinto (Teatro Capitol Quito 2024)</li>
+                                    <li>Festival Binacional de Tríos Ecuador-Colombia (Teatro San Gabriel Quito 2025)</li>
+                                    <li>Festival Mundial del Bolero (Ciudad de México 2025)</li>
+                                    <li>Festival del Requinto Don Requinto (Teatro San Gabriel 2026)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servicios -->
+                <div class="fade-in-up delay-100">
+                    <h2 class="font-heading text-4xl font-bold mb-8"><span class="text-cy-green">6.</span> Servicios Incluidos</h2>
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                        <ul class="space-y-4 text-gray-200 mb-8 relative z-10 text-lg">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cy-green"></i> Presentación musical de 90 minutos.</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cy-green"></i> Músicos e instrumentos profesionales.</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cy-green"></i> Trío vocal.</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-cy-green"></i> Animación durante el espectáculo.</li>
+                        </ul>
+
+                        <div class="bg-cy-dark p-6 rounded-xl border border-gray-800">
+                            <h4 class="font-bold text-cy-gold mb-2">Servicios Adicionales (Opcional):</h4>
+                            <p class="text-sm text-gray-400">Ofrecemos sistema de sonido, amplificación, micrófonos y todo lo necesario para un sonido impecable.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Por Qué Contratar & Contrataciones -->
+    <section id="contacto" class="py-24 relative overflow-hidden bg-cy-gray">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold mb-8 text-white">¿Por Qué Contratar a <br><span class="text-gradient-gold">Yago Robles & Código Y?</span></h2>
+            
+            <p class="text-xl text-gray-300 mb-10 italic">"Porque ofrecemos mucho más que una presentación musical."</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <span class="px-4 py-2 rounded-full border border-cy-green text-cy-green text-sm bg-cy-green/10">Versatilidad musical</span>
+                <span class="px-4 py-2 rounded-full border border-cy-gold text-cy-gold text-sm bg-cy-gold/10">Calidad interpretativa</span>
+                <span class="px-4 py-2 rounded-full border border-cy-silver text-cy-silver text-sm bg-cy-silver/10">Música ecuatoriana y latinoamericana</span>
+                <span class="px-4 py-2 rounded-full border border-cy-green text-cy-green text-sm bg-cy-green/10">Repertorio bailable e instrumental</span>
+            </div>
+
+            <!-- Video Section -->
+            <div class="mb-16 glass-card p-6 rounded-3xl border border-cy-green/30 shadow-[0_0_30px_rgba(0,255,65,0.15)]">
+                <h3 class="text-2xl font-heading font-bold mb-4 text-cy-green">Videoclip Oficial & Espectáculo en Vivo</h3>
+                <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
+                    <video controls playsinline preload="metadata" class="w-full h-full object-cover">
+                        <source src="video.mp4" type="video/mp4">
+                        Tu navegador no soporta la reproducción de video.
+                    </video>
+                </div>
+                <p class="text-xs text-gray-400 mt-3 italic">Reproduce el video promocional de Yago Robles & Código Y</p>
+            </div>
+
+            <div class="glass-card p-10 rounded-3xl border-2 border-cy-gold shadow-[0_0_40px_rgba(255,215,0,0.15)] relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gold-gradient"></div>
+                
+                <h3 class="text-3xl font-heading font-bold mb-2">CONTRATACIONES</h3>
+                <p class="text-gray-400 mb-8">Será un verdadero gusto formar parte de su programación artística.</p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 mb-10">
+                    <a href="https://wa.me/593987271641" target="_blank" class="flex items-center gap-3 text-2xl font-bold text-white hover:text-cy-green transition-colors">
+                        <i class="fab fa-whatsapp text-cy-green text-4xl"></i> 0987271641
+                    </a>
+                    <a href="mailto:yasarh.star@gmail.com" class="flex items-center gap-3 text-lg font-bold text-white hover:text-cy-silver transition-colors">
+                        <i class="fas fa-envelope text-cy-silver text-3xl"></i> yasarh.star@gmail.com
+                    </a>
+                </div>
+
+                <!-- Redes Sociales Actualizadas -->
+                <h4 class="text-sm uppercase tracking-widest text-cy-gold mb-6 border-b border-gray-700 pb-2 inline-block">Síguenos en redes sociales y plataformas digitales</h4>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://www.facebook.com/share/1CJgeGsRvX/" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-[#1877F2] text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all transform hover:scale-110 shadow-lg" title="Facebook 1">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1dugRMgseZ/" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-[#1877F2] text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all transform hover:scale-110 shadow-lg relative" title="Facebook 2">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                        <span class="absolute -bottom-2 -right-2 bg-cy-dark text-[9px] px-1 rounded text-cy-gold">2</span>
+                    </a>
+                    <a href="https://www.instagram.com/yagoroblesrequinto?xtok=bXMwbDg5d29xeDIw" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-[#E4405F] text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-all transform hover:scale-110 shadow-lg" title="Instagram Yago Robles">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/codigo.y.music?xtok=bzUxenJ0NTFnbWF5" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-[#E4405F] text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-all transform hover:scale-110 shadow-lg relative" title="Instagram Código Y">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span class="absolute -bottom-2 -right-2 bg-cy-dark text-[9px] px-1 rounded text-cy-silver">CY</span>
+                    </a>
+                    <a href="https://www.tiktok.com/@yagorobles_requinto?_r=1&_t=ZS-9B8Gv6OpFAa" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg" title="TikTok Yago Robles">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@codigo.y.music?_r=1&_t=ZS-9B8GsdbWtgE" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-black transition-all transform hover:scale-110 shadow-lg relative" title="TikTok Código Y">
+                        <i class="fab fa-tiktok text-xl"></i>
+                        <span class="absolute -bottom-2 -right-2 bg-cy-dark text-[9px] px-1 rounded text-cy-green">CY</span>
+                    </a>
+                    <a href="https://youtube.com/@yagoroblesrequinto?si=yHczH8Ro89JU4bU1" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-[#FF0000] text-[#FF0000] hover:bg-[#FF0000] hover:text-white transition-all transform hover:scale-110 shadow-lg" title="YouTube">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://open.spotify.com/artist/7yvLPTLkzl3sVBwa1PgXio?si=Ezyl2H6QTy26perCRTZQIQ&utm_source=copy-link" target="_blank" class="w-14 h-14 rounded-full bg-black flex items-center justify-center border-2 border-[#1DB954] text-[#1DB954] hover:bg-[#1DB954] hover:text-white transition-all transform hover:scale-110 shadow-lg" title="Spotify">
+                        <i class="fab fa-spotify text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-gray-800 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-4">
+            <p>&copy; 2026 Yago Robles & Código Y. Todos los derechos reservados.</p>
+            <p class="mt-2 text-cy-green italic">Descifrando sonidos, creando emociones.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/90', 'border-b', 'border-cy-green/20');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-black/90', 'border-b', 'border-cy-green/20');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
